@@ -16,7 +16,7 @@ WORKDIR /code
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-VOLUME ./bot:/code/bot
-VOLUME ./config:/code/config
+VOLUME /code/bot
+VOLUME /code/config
 
 CMD ["python3", "/code/bot/bot.py"]
