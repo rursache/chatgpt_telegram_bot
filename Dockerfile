@@ -10,13 +10,13 @@ ENV PYTHONFAULTHANDLER=1 \
 
 RUN apk --no-cache add ffmpeg
 
-RUN mkdir -p /code/bot /code/config
-ADD . /code
 WORKDIR /code
 
-RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . /code
 
-VOLUME ./bot:/code/bot
-VOLUME ./config:/code/config
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python3", "/code/bot/bot.py"]
+VOLUME /code/bot
+VOLUME /code/config
+
+CMD ["python", "/code/bot/bot.py"]
