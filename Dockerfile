@@ -16,7 +16,4 @@ COPY . /code
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-VOLUME /code/bot
-VOLUME /code/config
-
 CMD ["python", "/code/bot/bot.py"]
